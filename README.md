@@ -1,3 +1,4 @@
+## DB Name (php_test)
 # SQL Command for create signup form table
 ``` sql
 CREATE TABLE admin_users (
