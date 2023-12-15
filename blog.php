@@ -30,7 +30,7 @@
                                 $post_meta = $row['created_at'];
                             ?>
                             <div class="single-blog">
-                                <h2><?php echo $title; ?></h2>
+                                <h2><a href="single_post.php?id=<?php echo $row['id']; ?>"><?php echo $title; ?></a></h2>
                                 <p><?php echo $content; ?></p>
                                 <p>Posted on <?php echo $post_meta; ?></p>
                             </div>
