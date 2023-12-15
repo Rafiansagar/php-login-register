@@ -1,41 +1,41 @@
 <?php
-include 'db.php';
+    include 'db.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $inputUsername = $_POST["username"];
-    $inputEmail = $_POST["email"];
-    $inputPassword = $_POST["password"];
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Retrieve form data
+        $inputUsername = $_POST["username"];
+        $inputEmail = $_POST["email"];
+        $inputPassword = $_POST["password"];
 
-    // Additional validation and sanitization can be added here
+        // Additional validation and sanitization can be added here
 
-    // Check if the username or email already exists
-    $checkUserQuery = "SELECT * FROM admin_users WHERE username = '$inputUsername' OR email = '$inputEmail'";
-    $result = $conn->query($checkUserQuery);
+        // Check if the username or email already exists
+        $checkUserQuery = "SELECT * FROM admin_users WHERE username = '$inputUsername' OR email = '$inputEmail'";
+        $result = $conn->query($checkUserQuery);
 
-    if ($result->num_rows > 0) {
-        // Redirect or handle existing username or email
-        header("Location: main_content.php");
-        exit();
-    } else {
-        // Hash the password for security
-        $hashedPassword = password_hash($inputPassword, PASSWORD_DEFAULT);
-
-        // Insert user data into the database with the 'user' role
-        $insertQuery = "INSERT INTO admin_users (username, password, email, role) VALUES ('$inputUsername', '$hashedPassword', '$inputEmail', 'user')";
-
-        if ($conn->query($insertQuery) === TRUE) {
-            // Redirect to main_content.php or display success message
-            header("Location: index.php");
+        if ($result->num_rows > 0) {
+            // Redirect or handle existing username or email
+            header("Location: main_content.php");
             exit();
         } else {
-            echo "Error: " . $insertQuery . "<br>" . $conn->error;
-            echo '<a href="index.php">Login</a>'
-        }
-    }
+            // Hash the password for security
+            $hashedPassword = password_hash($inputPassword, PASSWORD_DEFAULT);
 
-    $conn->close();
-}
+            // Insert user data into the database with the 'user' role
+            $insertQuery = "INSERT INTO admin_users (username, password, email, role) VALUES ('$inputUsername', '$hashedPassword', '$inputEmail', 'user')";
+
+            if ($conn->query($insertQuery) === TRUE) {
+                // Redirect to main_content.php or display success message
+                header("Location: index.php");
+                exit();
+            } else {
+                echo "Error: " . $insertQuery . "<br>" . $conn->error;
+                echo '<a href="index.php">Login</a>';
+            }
+        }
+
+        $conn->close();
+    }
 ?>
 
 <!--  SQL Command for create signup form table
