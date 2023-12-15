@@ -1,13 +1,3 @@
-<!--  SQL Command for create signup form table
-CREATE TABLE admin_users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL
-    role VARCHAR(50) DEFAULT 'user'
-);
--->
-
 <?php
 include 'db.php';
 
@@ -46,3 +36,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
+
+<!--  SQL Command for create signup form table
+CREATE TABLE admin_users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL
+    role VARCHAR(50) DEFAULT 'user'
+);
+-->
