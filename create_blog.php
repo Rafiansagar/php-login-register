@@ -12,12 +12,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $image_path = $image_dir . $image_name;
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $image_path)) {
-        // Use prepared statement
-        $sql = "INSERT INTO blog_posts (title, content, image_path) VALUES (?, ?, ?)";
+
+        $userName = $_SESSION['username'];
+        
+        $sql = "INSERT INTO blog_posts (title, content, image_path, author) VALUES (?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
 
         // Bind parameters
-        $stmt->bind_param("sss", $title, $content, $image_path);
+        $stmt->bind_param("ssss", $title, $content, $image_path, $userName);
 
         // Execute the statement
         if ($stmt->execute()) {
