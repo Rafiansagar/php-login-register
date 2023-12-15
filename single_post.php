@@ -2,11 +2,11 @@
 include 'db.php';
 include 'session_check.php';
 
-if (isset($_GET['id'])) {
-    $post_id = $_GET['id'];
+if (isset($_GET['title'])) {
+    $post_title = urldecode($_GET['title']);
 
-    $stmt = $conn->prepare("SELECT * FROM blog_posts WHERE id = ?");
-    $stmt->bind_param("i", $post_id);
+    $stmt = $conn->prepare("SELECT * FROM blog_posts WHERE title = ?");
+    $stmt->bind_param("s", $post_title);
 
     if ($stmt->execute()) {
         $result = $stmt->get_result();
