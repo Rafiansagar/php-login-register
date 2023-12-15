@@ -15,6 +15,7 @@ if (isset($_GET['title'])) {
             $row = $result->fetch_assoc();
             $title = $row['title'];
             $content = $row['content'];
+            $posted_by = $row['author'];
             $post_date = $row['created_at'];
             $datetime = new DateTime($post_date);
             $formattedDate = $datetime->format('d-m-Y');
