@@ -20,3 +20,5 @@ CREATE TABLE IF NOT EXISTS blog_posts (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
+Live Site
+https://sagar-php-test.000webhostapp.com/
