@@ -6,6 +6,6 @@
         <button type="submit" value="Login">Login</button>
     </form>
     <div class="inner-btn">
-        <a href="signup.php">Goto SignUp Page</a>
+        <a href="signup.php">Or Create Account</a>
     </div>
 </div>

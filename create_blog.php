@@ -53,28 +53,34 @@ CREATE TABLE IF NOT EXISTS blog_posts (
 <?php include 'inc/head.php'; ?>
     <body class="create-blog-page">
         <?php
-            if ($loggedIn) {
-                $role = $_SESSION["role"];
-                if ($role === "administrator" || $role === "admin" ) { ?>
+            if ($loggedIn) {?>
+                <div class="st-header">
                     <?php include 'layout/header.php'; ?>
+                </div>
+                <?php $role = $_SESSION["role"];
+                if ($role === "administrator" || $role === "admin" ) { ?>
                     <div class="main-content">
-                        <h2>Create a Blog Post</h2>
-                        <form method="post" action="" enctype="multipart/form-data">
-                            <label for="title">Title:</label>
-                            <input type="text" name="title" required><br>
+                        <div class="container">
+                            <h2>Create a Blog Post</h2>
+                            <form method="post" action="" enctype="multipart/form-data">
+                                <label for="title">Title:</label>
+                                <input type="text" name="title" required><br>
 
-                            <label for="image">Upload Image:</label>
-                            <input type="file" name="image"><br>
+                                <label for="image">Upload Image:</label>
+                                <input type="file" name="image"><br>
 
-                            <label for="content">Content:</label>
-                            <textarea name="content" required></textarea><br>
+                                <label for="content">Content:</label>
+                                <textarea name="content" required></textarea><br>
 
-                            <input type="submit" value="Create Post">
-                        </form>
+                                <input type="submit" value="Create Post">
+                            </form>
+                        </div>
                     </div>
                 <?php } else {
+                    echo '<div class="container">';
                     echo "Sorry Youre Not a Admin.";
                     echo '<br><a href="main_content.php">Return Home</a>';
+                    echo '</div>';
                 }
             } else {
                 echo "Request Invalid";

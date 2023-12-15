@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             echo "Error: " . $insertQuery . "<br>" . $conn->error;
+            echo '<a href="index.php">Login</a>'
         }
     }
 

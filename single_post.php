@@ -25,22 +25,26 @@ include 'db.php';
                     $formattedTime = $datetime->format('h:i A');
                     ?>
                     
-                            <?php include 'layout/header.php'; ?>
+                            <div class="st-header">
+                                <?php include 'layout/header.php'; ?>
+                            </div>
                             <div class="main-content">
-                                <div class="single-blog">
-                                    <?php if (!empty($row['image_path'])): ?>
-                                        <img src="<?php echo $row['image_path']; ?>" alt="Blog Image">
-                                    <?php endif; ?>
-                                    <h2><?php echo $title; ?></h2>
-                                    <p><?php echo $content; ?></p>
-                                    <p>Posted on <?php echo $formattedDate; ?> at <?php echo $formattedTime; ?></p>
+                                <div class="container">
+                                    <div class="single-blog">
+                                        <?php if (!empty($row['image_path'])): ?>
+                                            <img src="<?php echo $row['image_path']; ?>" alt="Blog Image">
+                                        <?php endif; ?>
+                                        <h2><?php echo $title; ?></h2>
+                                        <p><?php echo $content; ?></p>
+                                        <p>Posted on <?php echo $formattedDate; ?> at <?php echo $formattedTime; ?></p>
+                                    </div>
                                 </div>
                             </div>
                         </body>
                     </html>
                     <?php
                 } else {
-                    echo "Post not found.";
+                    echo '<div class="container">Post not found.</div>';
                 }
             } else {
                 echo "Error: " . $stmt->error;

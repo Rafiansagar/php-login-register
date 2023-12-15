@@ -6,16 +6,21 @@
     <body class="main-page">
         <?php if ($loggedIn): ?>
 
-            <?php include 'layout/header.php'; ?>
+            <div class="st-header">
+                <?php include 'layout/header.php'; ?>
+            </div>
 
             <div class="main-content">
-                <h1>Enterd Successfully</h1>
+                <div class="container">
+                    <h1>Enterd Successfully</h1>
+                </div>
             </div>
 
         <?php else: ?>
-            <h1>Nothing Found</h1>
-            <a href="index.php">Login</a>
+            <div class="container">
+                <h1>Nothing Found</h1>
+                <a href="index.php">Login</a>
+            </div>
         <?php endif; ?>
-
     </body>
 <?php include 'inc/footer.php'; ?>

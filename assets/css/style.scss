@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 $bodyFont: 'Inter', sans-serif;
-$primaryColor: #165d89;
+$primaryColor: #126ee8;
+$secondaryColor: #165d89;
 $whiteColor: #ffffff;
 $bodyColor: #444444;
 $titleColor: #111111;
@@ -38,10 +39,7 @@ body {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        background: url(../image/body-bg.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        background-image: linear-gradient(40deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 44%, rgba(0,212,255,1) 100%);
     }
 }
 h1,h2 {
@@ -55,24 +53,56 @@ h2 {
     font-size: 32px;
     
 }
-
 a {
-    text-decoration: none;
+    text-decoration: none !important;
+    outline: none !important;
     transition: $transition;
+    color: $primaryColor;
+    &:active,
+    &:hover {
+        text-decoration: none;
+        outline: 0 none;
+        color: $secondaryColor;
+    }
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+ul {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+.clear {
+  clear: both;
+}
+::-moz-selection {
+  background: #126ee8;
+  text-shadow: none;
+  color: #ffffff;
+}
+::selection {
+  background: #126ee8;
+  text-shadow: none;
+  color: #ffffff;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none !important;
 }
 
 
 
 .form-wrapper {
-    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(49deg, #ffffff4f 0%, transparent 50%);
     border-radius: 6px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 0px 1px rgb(255, 255, 255, 0.15);
     max-width: 515px;
     padding: 50px;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin: 0 auto;
     h2 {
         padding: 0;
         margin: 0 0 20px;
@@ -125,6 +155,23 @@ a {
             color: rgba(255, 255, 255, 0.8);
             &:hover {
                 color: $whiteColor;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.st-header {
+    padding: 20px 0;
+    background: #f1eff5;
+    ul.nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        li {
+            list-style: none;
+            a {
                 display: inline-block;
             }
         }
