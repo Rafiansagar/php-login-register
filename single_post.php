@@ -3,7 +3,8 @@ include 'db.php';
 include 'session_check.php';
 
 if (isset($_GET['title'])) {
-    $post_title = urldecode($_GET['title']);
+    $encodedTitle = $_GET['title'];
+    $post_title = str_replace('_', ' ', urldecode($encodedTitle));
 
     $stmt = $conn->prepare("SELECT * FROM blog_posts WHERE title = ?");
     $stmt->bind_param("s", $post_title);

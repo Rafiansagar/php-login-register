@@ -28,12 +28,14 @@
                                 $title = $row['title'];
                                 $content = $row['content'];
                                 $post_meta = $row['created_at'];
+                                $encodedTitle = urlencode(strtolower(str_replace(' ', '_', $title)));
                             ?>
                             <div class="single-blog">
-                                <h2><a href="single_post.php?title=<?php echo urlencode($title); ?>"><?php echo $title; ?></a></h2>
+                                <h2><a href="single_post.php?title=<?php echo $encodedTitle; ?>"><?php echo $title; ?></a></h2>
                                 <p><?php echo $content; ?></p>
                                 <p>Posted on <?php echo $post_meta; ?></p>
                             </div>
+
 
                         <?php } } else {
                             echo "No posts yet.";
