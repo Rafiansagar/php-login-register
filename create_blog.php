@@ -1,14 +1,3 @@
-
-<!--  SQL Command for create blog post table
-CREATE TABLE IF NOT EXISTS blog_posts (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    title VARCHAR(255) NOT NULL,
-    content TEXT NOT NULL,
-    image_path VARCHAR(255),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
--->
-
 <?php
 include 'session_check.php';
 include 'db.php';
@@ -45,7 +34,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
+<!--  SQL Command for create blog post table
+CREATE TABLE IF NOT EXISTS blog_posts (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    image_path VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+-->
 
 <!DOCTYPE html>
 <html lang="en">
