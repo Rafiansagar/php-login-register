@@ -9,6 +9,7 @@
     // $username = "id21674725_root";
     // $password = "7*******#";
     // $dbname = "id21674725_php_test";
+    //https://sagar-php-test.000webhostapp.com/
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
