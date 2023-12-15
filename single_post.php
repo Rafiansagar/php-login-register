@@ -15,7 +15,10 @@ if (isset($_GET['title'])) {
             $row = $result->fetch_assoc();
             $title = $row['title'];
             $content = $row['content'];
-            $post_meta = $row['created_at'];
+            $post_date = $row['created_at'];
+            $datetime = new DateTime($post_date);
+            $formattedDate = $datetime->format('d-m-Y');
+            $formattedTime = $datetime->format('h:i A');
             ?>
             <!DOCTYPE html>
             <html lang="en">
@@ -31,7 +34,7 @@ if (isset($_GET['title'])) {
                             <?php endif; ?>
                             <h2><?php echo $title; ?></h2>
                             <p><?php echo $content; ?></p>
-                            <p>Posted on <?php echo $post_meta; ?></p>
+                            <p>Posted on <?php echo $formattedDate; ?> at <?php echo $formattedTime; ?></p>
                         </div>
                     </div>
                 </body>
