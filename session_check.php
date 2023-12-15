@@ -10,5 +10,4 @@ if (isset($_SESSION["username"])) {
     $loggedIn = false;
     $username = null;
 }
-
 ?>

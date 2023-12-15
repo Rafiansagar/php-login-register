@@ -6,9 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];
     $content = $_POST['content'];
 
-    // Check if an image is provided
     if (!empty($_FILES['image']['name'])) {
-        // Image upload handling
         $image_dir = 'uploads/';
         $image_name = basename($_FILES['image']['name']);
         $image_path = $image_dir . $image_name;
@@ -18,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
     } else {
-        // If no image is provided, set the image_path to an empty string
         $image_path = '';
     }
 
@@ -26,8 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $sql = "INSERT INTO blog_posts (title, content, image_path, author) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-
-    // Bind parameters
+    
     $stmt->bind_param("ssss", $title, $content, $image_path, $userName);
 
     // Execute the statement
@@ -38,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Error: " . $stmt->error;
     }
 
-    // Close the statement
     $stmt->close();
 }
 ?>
@@ -54,32 +49,37 @@ CREATE TABLE IF NOT EXISTS blog_posts (
 );
 -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php include 'inc/head.php'; ?>
-</head>
-<body class="loggedIn">
-    <?php if ($loggedIn): ?>
-        <?php include 'layout/header.php'; ?>
-        <div class="main-content">
-            <h2>Create a Blog Post</h2>
-            <form method="post" action="" enctype="multipart/form-data">
-                <label for="title">Title:</label>
-                <input type="text" name="title" required><br>
 
-                <label for="image">Upload Image:</label>
-                <input type="file" name="image"><br>
+<?php include 'inc/head.php'; ?>
+    <body class="create-blog-page">
+        <?php
+            if ($loggedIn) {
+                $role = $_SESSION["role"];
+                if ($role === "administrator" || $role === "admin" ) { ?>
+                    <?php include 'layout/header.php'; ?>
+                    <div class="main-content">
+                        <h2>Create a Blog Post</h2>
+                        <form method="post" action="" enctype="multipart/form-data">
+                            <label for="title">Title:</label>
+                            <input type="text" name="title" required><br>
 
-                <label for="content">Content:</label>
-                <textarea name="content" required></textarea><br>
+                            <label for="image">Upload Image:</label>
+                            <input type="file" name="image"><br>
 
-                <input type="submit" value="Create Post">
-            </form>
-        </div>
-    <?php else: ?>
-        <h1>Nothing Found</h1>
-        <a href="index.php">Login</a>
-    <?php endif; ?>
-</body>
-</html>
+                            <label for="content">Content:</label>
+                            <textarea name="content" required></textarea><br>
+
+                            <input type="submit" value="Create Post">
+                        </form>
+                    </div>
+                <?php } else {
+                    echo "Sorry Youre Not a Admin.";
+                    echo '<br><a href="main_content.php">Return Home</a>';
+                }
+            } else {
+                echo "Request Invalid";
+                echo '<br><a href="index.php">LogIn</a>';
+            }
+        ?>
+    </body>
+<?php include 'inc/footer.php'; ?>
