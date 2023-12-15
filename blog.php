@@ -1,7 +1,7 @@
 
 <?php
-    include 'db.php';
     include 'session_check.php';
+    include 'db.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Your post handling logic here

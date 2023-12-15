@@ -1,6 +1,6 @@
 <?php
-include 'db.php';
 include 'session_check.php';
+include 'db.php';
 
 if (isset($_GET['title'])) {
     $encodedTitle = $_GET['title'];

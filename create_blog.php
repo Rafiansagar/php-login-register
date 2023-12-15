@@ -10,8 +10,8 @@ CREATE TABLE IF NOT EXISTS blog_posts (
 -->
 
 <?php
-include 'db.php';
 include 'session_check.php';
+include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];
