@@ -7,12 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $content = $_POST['content'];
 
     if (!empty($_FILES['image']['name'])) {
-        $image_dir = 'uploads/';
+        $image_dir = 'uploads/blog/';
         $image_name = basename($_FILES['image']['name']);
         $image_path = $image_dir . $image_name;
 
         if (!move_uploaded_file($_FILES['image']['tmp_name'], $image_path)) {
             echo "Error uploading the image.";
+            echo '<a href="main_content.php">Return Home</a>';
             exit();
         }
     } else {
