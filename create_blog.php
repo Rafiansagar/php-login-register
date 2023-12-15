@@ -16,13 +16,23 @@ CREATE TABLE IF NOT EXISTS blog_posts (
         $title = $_POST['title'];
         $content = $_POST['content'];
 
-        $sql = "INSERT INTO blog_posts (title, content) VALUES ('$title', '$content')";
-        if ($conn->query($sql) === TRUE) {
+        // Use prepared statement
+        $sql = "INSERT INTO blog_posts (title, content) VALUES (?, ?)";
+        $stmt = $conn->prepare($sql);
+
+        // Bind parameters
+        $stmt->bind_param("ss", $title, $content);
+
+        // Execute the statement
+        if ($stmt->execute()) {
             header("Location: blog.php");
             exit();
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . $stmt->error;
         }
+
+        // Close the statement
+        $stmt->close();
     }
 ?>
 
