@@ -53,40 +53,46 @@ CREATE TABLE IF NOT EXISTS blog_posts (
 
 <?php include 'inc/head.php'; ?>
     <body class="create-blog-page">
-        <?php
-            if ($loggedIn) {?>
-                <div class="st-header">
-                    <?php include 'layout/header.php'; ?>
+        <?php if ($loggedIn) {?>
+            <div class="st-header">
+                <?php include 'layout/header.php'; ?>
+            </div>
+        <?php } ?>
+        <div class="main-content">
+            <div class="container">
+                <div class="creeate-blog-form-wrapper">
+                    <?php
+                        if ($loggedIn) {?>
+                            <?php $role = $_SESSION["role"];
+                            if ($role === "administrator" || $role === "admin" ) { ?>
+                                
+                                    <h2>Create a Blog Post</h2>
+                                    <form method="post" action="" enctype="multipart/form-data">
+                                        <label for="title">Blog Title <span>*</span></label>
+                                        <input type="text" name="title" required>
+
+                                        <label for="content">Blog Content <span>*</span></label>
+                                        <textarea name="content" required></textarea>
+
+                                        <label for="image">Upload Blog Image:</label>
+                                        <input type="file" name="image">
+
+                                        <div class="submit-button">
+                                            <button type="submit">Create Post</button>
+                                        </div>
+                                    </form>
+                                
+                            <?php } else {
+                                echo "Sorry Youre Not a Admin.";
+                                echo '<br><a href="main_content.php">Return Home</a>';
+                            }
+                        } else {
+                            echo "Request Invalid";
+                            echo '<br><a href="index.php">LogIn</a>';
+                        }
+                    ?>
                 </div>
-                <?php $role = $_SESSION["role"];
-                if ($role === "administrator" || $role === "admin" ) { ?>
-                    <div class="main-content">
-                        <div class="container">
-                            <h2>Create a Blog Post</h2>
-                            <form method="post" action="" enctype="multipart/form-data">
-                                <label for="title">Title:</label>
-                                <input type="text" name="title" required><br>
-
-                                <label for="image">Upload Image:</label>
-                                <input type="file" name="image"><br>
-
-                                <label for="content">Content:</label>
-                                <textarea name="content" required></textarea><br>
-
-                                <input type="submit" value="Create Post">
-                            </form>
-                        </div>
-                    </div>
-                <?php } else {
-                    echo '<div class="container">';
-                    echo "Sorry Youre Not a Admin.";
-                    echo '<br><a href="main_content.php">Return Home</a>';
-                    echo '</div>';
-                }
-            } else {
-                echo "Request Invalid";
-                echo '<br><a href="index.php">LogIn</a>';
-            }
-        ?>
+            </div>
+        </div>
     </body>
 <?php include 'inc/footer.php'; ?>

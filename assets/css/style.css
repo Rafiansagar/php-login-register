@@ -33,6 +33,16 @@ body.signup-page, body.login-page {
   flex-direction: column;
   background-image: linear-gradient(40deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 44%, rgb(0, 212, 255) 100%);
 }
+body.signup-page .db-init, body.login-page .db-init {
+  font-size: 17px;
+  margin-top: 40px;
+}
+body.signup-page .db-init a, body.login-page .db-init a {
+  color: #ffffff;
+}
+body.signup-page .db-init a:hover, body.login-page .db-init a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
 
 h1, h2 {
   font-weight: 700;
@@ -91,6 +101,24 @@ select:focus,
 textarea:focus,
 button:focus {
   outline: none !important;
+}
+
+.st-header {
+  padding: 20px 0;
+  background: #f1eff5;
+}
+.st-header ul.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.st-header ul.nav-links li {
+  list-style: none;
+}
+.st-header ul.nav-links li a {
+  display: inline-block;
 }
 
 .form-wrapper {
@@ -156,19 +184,78 @@ button:focus {
   display: inline-block;
 }
 
-.st-header {
-  padding: 20px 0;
-  background: #f1eff5;
+.creeate-blog-form-wrapper {
+  max-width: 700px;
+  margin: 50px auto 0;
 }
-.st-header ul.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
+.creeate-blog-form-wrapper form {
+  width: 100%;
+  margin-top: 30px;
 }
-.st-header ul.nav-links li {
-  list-style: none;
+.creeate-blog-form-wrapper form label {
+  color: #111111;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  display: block;
 }
-.st-header ul.nav-links li a {
-  display: inline-block;
+.creeate-blog-form-wrapper form label span {
+  color: #ff0000;
+}
+.creeate-blog-form-wrapper form textarea,
+.creeate-blog-form-wrapper form input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #cfcfcf;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  padding: 10px;
+  color: #111111;
+}
+.creeate-blog-form-wrapper form input[type=file] {
+  width: auto;
+}
+.creeate-blog-form-wrapper form textarea {
+  height: 150px;
+}
+.creeate-blog-form-wrapper form .submit-button button {
+  border: none;
+  padding: 14px 35px;
+  outline: none;
+  background: #126ee8;
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: 500;
+}
+.creeate-blog-form-wrapper form .submit-button button:hover {
+  background: #165d89;
+}
+
+.st-blog {
+  padding-top: 50px;
+}
+.st-blog .single-blog {
+  margin-bottom: 30px;
+  background: #efefef;
+  padding: 30px;
+  border-radius: 10px;
+}
+.st-blog .single-blog .blog_title {
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.st-blog .single-blog .blog_title a {
+  color: #111111;
+}
+.st-blog .single-blog .blog_title a:hover {
+  color: #126ee8;
+}
+.st-blog .single-blog .blog_desc {
+  margin-bottom: 25px;
+}
+.st-blog .single-blog .author span {
+  color: #111111;
+  font-weight: 500;
 }

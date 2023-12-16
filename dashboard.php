@@ -14,8 +14,10 @@ include 'db.php';
             $updateRoleQuery = "UPDATE admin_users SET role = '$newRole' WHERE id = $userId";
 
             if ($conn->query($updateRoleQuery) === TRUE) {
+                echo '<div class="container">';
                 echo "User role updated successfully.";
                 echo '<br><a href="main_content.php">Main Content</a>';
+                echo '</div>';
             }
         }
         exit();

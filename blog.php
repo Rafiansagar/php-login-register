@@ -28,10 +28,10 @@
                                 $formattedTime = $datetime->format('h:i A');
                             ?>
                             <div class="single-blog">
-                                <h2><a href="single_post.php?title=<?php echo $encodedTitle; ?>"><?php echo $title; ?></a></h2>
-                                <p><?php echo $content; ?></p>
-                                <p>Posted on <?php echo $formattedDate; ?> at <?php echo $formattedTime; ?></p>
-                                <p>by <?php echo $posted_by; ?></p>
+                                <h3 class="blog_title"><a href="single_post.php?title=<?php echo $encodedTitle; ?>"><?php echo $title; ?></a></h3>
+                                <p class="blog_desc"><?php echo $content; ?></p>
+                                <div class="post_meta">Posted on <?php echo $formattedDate; ?> at <?php echo $formattedTime; ?></div>
+                                <div class="author">by <span><?php echo $posted_by; ?></span></div>
                             </div>
 
 

@@ -1,3 +1,10 @@
+<?php
+    include 'db.php';
+
+    $tableName = 'admin_users';
+    $sqlCheckTable = "SHOW TABLES LIKE '$tableName'";
+    $result = $conn->query($sqlCheckTable);
+?>
 <?php include 'inc/head.php'; ?>
     <body class="signup-page">
         <div class="container">
@@ -16,5 +23,11 @@
                 </div>
             </div>
         </div>
+        <?php if ($result->num_rows !== 1) { ?>
+            <div class="db-init">
+                <a href="init.php">Initialize All <i class="ri-git-branch-line"></i></a>
+            </div>
+        <?php } $conn->close(); ?>
+        
     </body>
 <?php include 'inc/footer.php'; ?>

@@ -13,7 +13,7 @@
         <!-- Animate CSS -->
         <link rel="stylesheet" href="assets/css/vendor/animate.css">
         <!-- Remixicon CSS -->
-        <link rel="stylesheet" href="assets/css/vendor/remixicon.css">
+        <link rel="stylesheet" href="assets/fonts/remixicon.css">
         <!-- Bootstarp CSS -->
         <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
         <!-- Main Style CSS -->
