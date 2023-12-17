@@ -2,8 +2,10 @@
     include 'session_check.php';
     include 'db.php';
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $sortOrder = isset($_GET['sort']) ? $_GET['sort'] : 'desc'; // Default to descending order
 
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Handle any POST requests if needed
     }
 ?>
 <?php include 'inc/head.php'; ?>
@@ -15,7 +17,7 @@
             <div class="st-blog">
                 <div class="container">
                     <?php
-                        $result = $conn->query("SELECT * FROM blog_posts");
+                        $result = $conn->query("SELECT * FROM blog_posts ORDER BY created_at $sortOrder");
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
                                 $title = $row['title'];
@@ -33,11 +35,10 @@
                                 <div class="post_meta">Posted on <?php echo $formattedDate; ?> at <?php echo $formattedTime; ?></div>
                                 <div class="author">by <span><?php echo $posted_by; ?></span></div>
                             </div>
-
-
                         <?php } } else {
                             echo "No posts yet.";
-                        } $conn->close();
+                        }
+                        $conn->close();
                     ?>
                 </div>
             </div>
