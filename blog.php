@@ -1,7 +1,7 @@
 <?php
     include 'session_check.php';
     include 'db.php';
-
+// asc or desc
     $sortOrder = isset($_GET['sort']) ? $_GET['sort'] : 'desc'; // Default to descending order
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
