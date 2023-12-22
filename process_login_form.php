@@ -10,9 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Retrieve form data
-    $inputUsername = $_POST["username"];
-    $inputPassword = $_POST["password"];
+    // Sanitize and retrieve form data
+    $inputUsername = filter_var($_POST["username"], FILTER_SANITIZE_STRING);
+    $inputPassword = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
 
     // Prepare and execute a statement to check if the username exists
     $checkUserQuery = "SELECT * FROM admin_users WHERE username = ?";
