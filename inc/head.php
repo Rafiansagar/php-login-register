@@ -7,6 +7,10 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="robots" content="noindex, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="assets/images/fav.png" />
+        <link rel="icon" href="assets/images/fav.png" />
+        <link rel="apple-touch-icon" href="assets/images/fav.png" />
+        <meta name="msapplication-TileImage" content="assets/images/fav.png" />
         <!-- Meta Tags -->
         <title>Login Register PHP</title>
 
