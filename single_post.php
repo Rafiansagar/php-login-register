@@ -47,7 +47,10 @@ if (isset($_GET['title'])) {
                     </div>
                 </div>
             </body>
-            <?php include 'inc/footer.php'; ?>
+            <?php 
+                include 'inc/user_chat.php';
+                include 'inc/footer.php';
+            ?>
 
             <?php
         } else {
@@ -79,8 +82,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["delete_post"])) {
     }
     exit();
 }
-?>
-<?php
-include 'inc/user_chat.php';
-include 'inc/footer.php';
 ?>
