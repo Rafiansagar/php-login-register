@@ -139,9 +139,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 echo "Access denied. Please log in.";
                 echo '<br><a href="index.php">LogIn</a>';
             }
-            $conn->close();
             ?>
         </div>
     </div>
 </body>
-<?php include 'inc/footer.php'; ?>
+<?php
+include 'inc/user_chat.php';
+include 'inc/footer.php';
+?>

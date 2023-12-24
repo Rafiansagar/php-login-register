@@ -6,7 +6,6 @@
         <li><a href="signup.php">Signup</a></li>
         <li><a href="blog.php">Blog</a></li>
         <li><a href="create_blog.php">Create Blog</a></li>
-        <li><a href="users.php">users</a></li>
         <li><a href="dashboard.php">Dashboard</a></li>
     </ul>
 </div>
