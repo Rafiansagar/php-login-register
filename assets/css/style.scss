@@ -104,6 +104,56 @@ button:focus {
   outline: none !important;
 }
 
+body {
+    .chat-offcan-wrapper {
+        position: fixed;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 10px;
+        i {
+            font-size: 22px;
+            background: $primaryColor;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 10px;
+        }
+        .user-chat-list {
+            background: $primaryColor;
+            padding: 20px;
+            border-radius: 6px;
+            transform: scaleY(0);
+            height: 0;
+            opacity: 0;
+            transition: $transition;
+            li {
+                margin-bottom: 5px;
+                a {
+                    color: #fff;
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    &.conversation-list-open {
+        .user-chat-list {
+            transform: scaleY(1);
+            opacity: 1;
+            height: auto;
+        }
+    }
+}
+
 .st-header {
     padding: 20px 0;
     background: #f1eff5;

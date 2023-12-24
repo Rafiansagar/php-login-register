@@ -28,6 +28,15 @@ include 'db.php';
         author VARCHAR(255) NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )";
+    
+    // SQL query to create the message table
+    $sqlMessage = "CREATE TABLE IF NOT EXISTS messages (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        sender_id VARCHAR(255),
+        receiver_id VARCHAR(255),
+        message TEXT,
+        timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )";
 
     // Execute all query
     if ($conn->query($sqlAdminUsers) === TRUE) {
@@ -40,6 +49,12 @@ include 'db.php';
         header("Location: signup.php");
     } else {
         echo "Error creating blog_posts table: " . $conn->error;
+        echo '<a href="index.php">Return</a>';
+    }
+    if ($conn->query($sqlMessage) === TRUE) {
+        header("Location: signup.php");
+    } else {
+        echo "Error creating message table: " . $conn->error;
         echo '<a href="index.php">Return</a>';
     }
 

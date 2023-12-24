@@ -103,6 +103,52 @@ button:focus {
   outline: none !important;
 }
 
+body .chat-offcan-wrapper {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+}
+body .chat-offcan-wrapper i {
+  font-size: 22px;
+  background: #126ee8;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 10px;
+}
+body .chat-offcan-wrapper .user-chat-list {
+  background: #126ee8;
+  padding: 20px;
+  border-radius: 6px;
+  transform: scaleY(0);
+  height: 0;
+  opacity: 0;
+  transition: all 0.3s;
+}
+body .chat-offcan-wrapper .user-chat-list li {
+  margin-bottom: 5px;
+}
+body .chat-offcan-wrapper .user-chat-list li a {
+  color: #fff;
+}
+body .chat-offcan-wrapper .user-chat-list li a:hover {
+  opacity: 0.7;
+}
+body .chat-offcan-wrapper .user-chat-list li:last-child {
+  margin: 0;
+}
+body.conversation-list-open .user-chat-list {
+  transform: scaleY(1);
+  opacity: 1;
+  height: auto;
+}
+
 .st-header {
   padding: 20px 0;
   background: #f1eff5;

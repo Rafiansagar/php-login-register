@@ -1,5 +1,6 @@
 <?php
     include 'session_check.php';
+    include 'db.php';
 ?>
 
 <?php include 'inc/head.php'; ?>
@@ -42,4 +43,8 @@
             </div>
         <?php endif; ?>
     </body>
-<?php include 'inc/footer.php'; ?>
+    
+<?php
+include 'inc/user_chat.php';
+include 'inc/footer.php'; 
+?>
