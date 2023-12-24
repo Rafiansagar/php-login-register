@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="assets/fonts/remixicon.css">
     <!-- Bootstarp CSS -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <!-- Spacing CSS -->
+    <link rel="stylesheet" href="assets/css/st-spacing.css">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Responsive CSS -->

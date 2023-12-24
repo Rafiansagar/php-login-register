@@ -9,7 +9,7 @@ include 'db.php';
         <div class="st-header">
             <?php include 'layout/header.php'; ?>
         </div>
-        <div class="conversation-area">
+        <div class="conversation-area pt-50">
             <div class="container">
                 <?php
                     // Get the recipient username from the query parameter
@@ -33,8 +33,15 @@ include 'db.php';
                                 // Display existing messages
                                 if ($messagesResult->num_rows > 0) {
                                     while ($row = $messagesResult->fetch_assoc()) {
-                                        echo '<p><strong>' . $row['sender_id'] . ':</strong> ' . $row['message'] . '</p>';
-                                    }
+                                        $message_date = $row['timestamp'];
+                                        $datetime = new DateTime($message_date);
+                                        $formattedDate = $datetime->format('d-m-Y');
+                                        $formattedTime = $datetime->format('h:i A');
+                                    ?>
+                                        <div class="txt-user"><strong><?php echo $row['sender_id'] ?> :</strong></div>
+                                        <p class="timestamp mb-6"> <?php echo $formattedDate ?> - <?php echo $formattedTime ?></p>
+                                        <p class="msg-body"><?php echo $row['message']?></p>
+                                    <?php } 
                                 } else {
                                     echo '<p>No messages found.</p>';
                                 }
@@ -77,11 +84,12 @@ include 'db.php';
                     } else {
                         echo '<p>Error: Recipient not specified.</p>';
                     }
-
-                    include 'inc/user_chat.php';
-                    include 'inc/footer.php';
                 ?>
             </div>
         </div>
+        <?php
+            include 'inc/user_chat.php';
+            include 'inc/footer.php';
+        ?>
     </body>
 </html>

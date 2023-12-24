@@ -305,3 +305,8 @@ body.conversation-list-open .user-chat-list {
   color: #111111;
   font-weight: 500;
 }
+
+.conversation-area .txt-user,
+.conversation-area .timestamp {
+  font-size: 14px;
+}
