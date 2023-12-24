@@ -34,6 +34,7 @@ include 'db.php';
                                 if ($messagesResult->num_rows > 0) {
                                     while ($row = $messagesResult->fetch_assoc()) {
                                         $message_date = $row['timestamp'];
+                                        
                                         $datetime = new DateTime($message_date);
                                         $formattedDate = $datetime->format('d-m-Y');
                                         $formattedTime = $datetime->format('h:i A');

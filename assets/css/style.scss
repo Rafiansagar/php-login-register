@@ -108,8 +108,7 @@ body {
     .chat-offcan-wrapper {
         position: fixed;
         left: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        bottom: 0;
         margin-left: 10px;
         i {
             font-size: 22px;
@@ -129,6 +128,7 @@ body {
             border-radius: 6px;
             transform: scaleY(0);
             height: 0;
+            margin-bottom: 20px;
             width: 0;
             opacity: 0;
             transition: $transition;

@@ -106,8 +106,7 @@ button:focus {
 body .chat-offcan-wrapper {
   position: fixed;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 0;
   margin-left: 10px;
 }
 body .chat-offcan-wrapper i {
@@ -128,6 +127,7 @@ body .chat-offcan-wrapper .user-chat-list {
   border-radius: 6px;
   transform: scaleY(0);
   height: 0;
+  margin-bottom: 20px;
   width: 0;
   opacity: 0;
   transition: all 0.3s;
