@@ -80,3 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["delete_post"])) {
     exit();
 }
 ?>
+<?php
+include 'inc/user_chat.php';
+include 'inc/footer.php';
+?>

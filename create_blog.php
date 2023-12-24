@@ -95,4 +95,7 @@ CREATE TABLE IF NOT EXISTS blog_posts (
             </div>
         </div>
     </body>
-<?php include 'inc/footer.php'; ?>
+<?php
+include 'inc/user_chat.php';
+include 'inc/footer.php';
+?>

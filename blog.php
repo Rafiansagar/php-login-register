@@ -38,10 +38,12 @@
                         <?php } } else {
                             echo "No posts yet.";
                         }
-                        $conn->close();
                     ?>
                 </div>
             </div>
         </div>
     </body>
-<?php include 'inc/footer.php'; ?>
+<?php
+include 'inc/user_chat.php';
+include 'inc/footer.php';
+?>
