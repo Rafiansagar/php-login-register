@@ -11,24 +11,26 @@
             </div>
 
             <div class="main-content">
-                <div class="container">
-                    <h1>Enterd Successfully</h1>
-                    <div style="margin-top: 50px;">
-                        <h2>Want to test this site?</h2>
-                        As (Administrator)<br>
-                        User: administrator123<br>
-                        Pass: administrator123
-                        <br>
-                        <br>
-                        As (admin)<br>
-                        User: test-admin123<br>
-                        Pass: test-admin123
-                        <br>
-                        <br>
-                        As (visitor or user)<br>
-                        User: user123<br>
-                        Pass: user123
+                <div class="intro-content">
+                    <div class="container">
+                        <h1>Enterd Successfully</h1>
+                        <div style="margin-top: 50px;">
+                            <h2>Want to test this site?</h2>
+                            As (Administrator)<br>
+                            User: administrator123<br>
+                            Pass: administrator123
+                            <br>
+                            <br>
+                            As (admin)<br>
+                            User: test-admin123<br>
+                            Pass: test-admin123
+                            <br>
+                            <br>
+                            As (visitor or user)<br>
+                            User: user123<br>
+                            Pass: user123
 
+                        </div>
                     </div>
                 </div>
             </div>
