@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'inc/head.php'; ?>
+    <?php include 'inc/head.php'; ?>
     <body class="create-blog-page">
         <?php if ($loggedIn) {?>
             <div class="st-header">
