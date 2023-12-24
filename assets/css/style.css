@@ -128,6 +128,7 @@ body .chat-offcan-wrapper .user-chat-list {
   border-radius: 6px;
   transform: scaleY(0);
   height: 0;
+  width: 0;
   opacity: 0;
   transition: all 0.3s;
 }
@@ -147,6 +148,7 @@ body.conversation-list-open .user-chat-list {
   transform: scaleY(1);
   opacity: 1;
   height: auto;
+  width: auto;
 }
 
 .st-header {
@@ -306,7 +308,6 @@ body.conversation-list-open .user-chat-list {
   font-weight: 500;
 }
 
-.conversation-area .txt-user,
 .conversation-area .timestamp {
-  font-size: 14px;
+  font-size: 12px;
 }
