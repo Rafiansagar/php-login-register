@@ -8,4 +8,3 @@
 	<script src="assets/js/vendor/wow.min.js"></script>
     <!-- Main js -->
 	<script src="assets/js/main.js"></script>
-</html>

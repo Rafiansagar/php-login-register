@@ -2,8 +2,9 @@
     include 'session_check.php';
     include 'db.php';
 ?>
-
-<?php include 'inc/head.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+    <?php include 'inc/head.php'; ?>
     <body class="main-page">
         <?php if ($loggedIn): ?>
 
@@ -42,9 +43,9 @@
                 <a href="index.php">Login</a>
             </div>
         <?php endif; ?>
+        <?php
+            include 'inc/user_chat.php';
+            include 'inc/footer.php'; 
+        ?>
     </body>
-    
-<?php
-include 'inc/user_chat.php';
-include 'inc/footer.php'; 
-?>
+</html>

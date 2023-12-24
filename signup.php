@@ -5,7 +5,9 @@
     $sqlCheckTable = "SHOW TABLES LIKE '$tableName'";
     $result = $conn->query($sqlCheckTable);
 ?>
-<?php include 'inc/head.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+    <?php include 'inc/head.php'; ?>
     <body class="signup-page">
         <div class="container">
             <div class="form-wrapper">
@@ -29,5 +31,6 @@
             </div>
         <?php } $conn->close(); ?>
         
+        <?php include 'inc/footer.php'; ?>
     </body>
-<?php include 'inc/footer.php'; ?>
+</html>

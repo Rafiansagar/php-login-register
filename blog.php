@@ -8,7 +8,9 @@
         // Handle any POST requests if needed
     }
 ?>
-<?php include 'inc/head.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+    <?php include 'inc/head.php'; ?>
     <body class="blog-page">
         <div class="st-header">
             <?php include 'layout/header.php'; ?>
@@ -42,8 +44,9 @@
                 </div>
             </div>
         </div>
-    </body>
-<?php
-include 'inc/user_chat.php';
-include 'inc/footer.php';
-?>
+    <?php
+        include 'inc/user_chat.php';
+        include 'inc/footer.php';
+    ?>
+</body>
+</html>

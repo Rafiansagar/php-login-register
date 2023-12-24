@@ -50,6 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 <?php include 'inc/head.php'; ?>
 <body class="dashboard-page">
     <?php if ($loggedIn) { ?>
@@ -142,8 +144,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             ?>
         </div>
     </div>
-</body>
 <?php
 include 'inc/user_chat.php';
 include 'inc/footer.php';
 ?>
+
+</body>
+</html>
