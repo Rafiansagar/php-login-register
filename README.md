@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS blog_posts (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
-# SQL query to create the message table
+# SQL Command for create message table
 ``` sql
     CREATE TABLE IF NOT EXISTS messages (
         id INT AUTO_INCREMENT PRIMARY KEY,
