@@ -9,5 +9,12 @@
         $('body').toggleClass('conversation-list-open');
     });
     
+    // Site Notifications
+    var notification = document.querySelector('.notification');
+    if (notification) {
+        setTimeout(function() {
+            notification.remove();
+        }, 2000);
+    }
 
 })(jQuery);

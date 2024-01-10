@@ -103,10 +103,28 @@ button:focus {
   outline: none !important;
 }
 
+body .notification {
+  position: fixed;
+  padding: 10px;
+  border-radius: 4px;
+  left: 50%;
+  top: 20px;
+  color: #fff;
+  transform: translateX(-50%) scale(1);
+  min-width: 300px;
+  max-width: 500px;
+  text-align: center;
+}
+body .notification.error {
+  background: #ff0000;
+}
+body .notification.success {
+  background: #138539;
+}
 body .chat-offcan-wrapper {
   position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: 20px;
   margin-left: 10px;
 }
 body .chat-offcan-wrapper i {
@@ -119,36 +137,48 @@ body .chat-offcan-wrapper i {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 0 10px;
 }
-body .chat-offcan-wrapper .user-chat-list {
+body .chat-offcan-wrapper .user-chat-list-wrapper {
   background: #126ee8;
-  padding: 20px;
+  padding: 20px 4px 20px 20px;
   border-radius: 6px;
-  transform: scaleY(0);
-  height: 0;
   margin-bottom: 20px;
-  width: 0;
   opacity: 0;
+  width: 200px;
+  position: relative;
+  left: -220px;
   transition: all 0.3s;
 }
-body .chat-offcan-wrapper .user-chat-list li {
-  margin-bottom: 5px;
+body .chat-offcan-wrapper .user-chat-list-wrapper .user-chat-list {
+  overflow-y: auto;
+  max-height: 100px;
+  min-height: 95px;
 }
-body .chat-offcan-wrapper .user-chat-list li a {
+body .chat-offcan-wrapper .user-chat-list-wrapper .user-chat-list li {
+  margin-bottom: 5px;
+  padding-right: 10px;
+}
+body .chat-offcan-wrapper .user-chat-list-wrapper .user-chat-list li a {
   color: #fff;
 }
-body .chat-offcan-wrapper .user-chat-list li a:hover {
+body .chat-offcan-wrapper .user-chat-list-wrapper .user-chat-list li a:hover {
   opacity: 0.7;
 }
-body .chat-offcan-wrapper .user-chat-list li:last-child {
+body .chat-offcan-wrapper .user-chat-list-wrapper .user-chat-list li:last-child {
   margin: 0;
 }
-body.conversation-list-open .user-chat-list {
-  transform: scaleY(1);
+body .chat-offcan-wrapper .user-chat-list-wrapper .user-chat-list::-webkit-scrollbar {
+  width: 2px;
+}
+body .chat-offcan-wrapper .user-chat-list-wrapper .user-chat-list::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+body .chat-offcan-wrapper .user-chat-list-wrapper .user-chat-list::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+body.conversation-list-open .user-chat-list-wrapper {
   opacity: 1;
-  height: auto;
-  width: auto;
+  left: 0;
 }
 
 .st-header {

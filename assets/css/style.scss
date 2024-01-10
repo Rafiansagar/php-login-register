@@ -105,10 +105,29 @@ button:focus {
 }
 
 body {
+    .notification {
+        position: fixed;
+        padding: 10px;
+        border-radius: 4px;
+        left: 50%;
+        top: 20px;
+        color: #fff;
+        transform: translateX(-50%) scale(1);
+        min-width: 300px;
+        max-width: 500px;
+        text-align: center;
+        &.error {
+            background: #ff0000;
+        }
+        &.success {
+            background: #138539;
+        }
+    }
+
     .chat-offcan-wrapper {
         position: fixed;
         left: 0;
-        bottom: 0;
+        bottom: 20px;
         margin-left: 10px;
         i {
             font-size: 22px;
@@ -120,38 +139,50 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 0 10px;
         }
-        .user-chat-list {
+        .user-chat-list-wrapper {
             background: $primaryColor;
-            padding: 20px;
+            padding: 20px 4px 20px 20px;
             border-radius: 6px;
-            transform: scaleY(0);
-            height: 0;
             margin-bottom: 20px;
-            width: 0;
             opacity: 0;
+            width: 200px;
+            position: relative;
+            left: -220px;
             transition: $transition;
-            li {
-                margin-bottom: 5px;
-                a {
-                    color: #fff;
-                    &:hover {
-                        opacity: 0.7;
+            .user-chat-list {
+                overflow-y: auto;
+                max-height: 100px;
+                min-height: 95px;
+                li {
+                    margin-bottom: 5px;
+                    padding-right: 10px;
+                    a {
+                        color: #fff;
+                        &:hover {
+                            opacity: 0.7;
+                        }
+                    }
+                    &:last-child {
+                        margin: 0;
                     }
                 }
-                &:last-child {
-                    margin: 0;
+                &::-webkit-scrollbar {
+                    width: 2px;
+                }
+                &::-webkit-scrollbar-track {
+                    background-color: rgba(255,255,255,0.1);
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: rgba(255,255,255,0.5);
                 }
             }
         }
     }
     &.conversation-list-open {
-        .user-chat-list {
-            transform: scaleY(1);
+        .user-chat-list-wrapper {
             opacity: 1;
-            height: auto;
-            width: auto;
+            left: 0;
         }
     }
 }

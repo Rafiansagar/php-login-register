@@ -44,7 +44,9 @@
             </div>
         <?php endif; ?>
         <?php
-            include 'inc/user_chat.php';
+            if ($loggedIn) {
+                include 'inc/user_chat.php';
+            }
             include 'inc/footer.php'; 
         ?>
     </body>
