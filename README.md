@@ -21,5 +21,16 @@ CREATE TABLE IF NOT EXISTS blog_posts (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
+# SQL query to create the message table
+``` sql
+    CREATE TABLE IF NOT EXISTS messages (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        sender_id VARCHAR(255),
+        receiver_id VARCHAR(255),
+        message TEXT,
+        timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )";
+```
+    
 Live Site
-https://sagar-php-test.000webhostapp.com/
+http://rafiansagar.rf.gd/
