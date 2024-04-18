@@ -73,8 +73,26 @@ include 'db.php';
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["delete_post"])) {
             if ($loggedIn && isset($_SESSION["role"]) && $_SESSION["role"] === "administrator") {
                 $postId = $_POST["post_id"];
-                $deletePostQuery = "DELETE FROM blog_posts WHERE id = $postId";
 
+                // Fetch the image path associated with the post and move to recycle when delet the post
+                $getImagePathQuery = "SELECT image_path FROM blog_posts WHERE id = $postId";
+                $imageResult = $conn->query($getImagePathQuery);
+                if ($imageResult) {
+                    $imageRow = $imageResult->fetch_assoc();
+                    $imagePath = $imageRow['image_path'];
+                    if (!empty($imagePath)) {
+                        $recycleBinPath = "uploads/recyclebin";
+                        if (!file_exists($recycleBinPath)) {
+                            mkdir($recycleBinPath, 0777, true);
+                        }
+                        $fileName = basename($imagePath);
+                        $newImagePath = $recycleBinPath . "/" . uniqid() . "_" . $fileName;
+                        rename($imagePath, $newImagePath);
+                    }
+                }
+
+                // Delete the post from the database
+                $deletePostQuery = "DELETE FROM blog_posts WHERE id = $postId";
                 if ($conn->query($deletePostQuery) === TRUE) {
                     echo '<div class="container">';
                     echo "<p style='color: green;'>Post deleted successfully.</p>";

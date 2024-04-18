@@ -9,6 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($_FILES['image']['name'])) {
         $image_dir = 'uploads/blog/';
         $image_name = basename($_FILES['image']['name']);
+
+        $image_name_parts = pathinfo($image_name);
+        $image_extension = isset($image_name_parts['extension']) ? '.' . $image_name_parts['extension'] : '';
+        $image_name = uniqid() . '_' . $image_name;
+
         $image_path = $image_dir . $image_name;
 
         if (!move_uploaded_file($_FILES['image']['tmp_name'], $image_path)) {
@@ -37,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $stmt->close();
 }
+
 ?>
 
 <!DOCTYPE html>
