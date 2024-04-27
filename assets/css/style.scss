@@ -149,6 +149,7 @@ body {
             width: 200px;
             position: relative;
             left: -220px;
+            pointer-events: none;
             transition: $transition;
             .user-chat-list {
                 overflow-y: auto;
@@ -183,6 +184,7 @@ body {
         .user-chat-list-wrapper {
             opacity: 1;
             left: 0;
+            pointer-events: unset;
         }
     }
 }

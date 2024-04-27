@@ -147,6 +147,7 @@ body .chat-offcan-wrapper .user-chat-list-wrapper {
   width: 200px;
   position: relative;
   left: -220px;
+  pointer-events: none;
   transition: all 0.3s;
 }
 body .chat-offcan-wrapper .user-chat-list-wrapper .user-chat-list {
@@ -179,6 +180,7 @@ body .chat-offcan-wrapper .user-chat-list-wrapper .user-chat-list::-webkit-scrol
 body.conversation-list-open .user-chat-list-wrapper {
   opacity: 1;
   left: 0;
+  pointer-events: unset;
 }
 
 .st-header {
