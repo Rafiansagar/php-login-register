@@ -21,7 +21,7 @@
         fetchData();
         function fetchData() {
             $.ajax({
-                url: 'test.php',
+                url: 'fetch_message.php',
                 type: 'GET',
                 success: function(response) {
                     $('#data-container').html(response);
