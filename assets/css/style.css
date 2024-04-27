@@ -142,11 +142,11 @@ body .chat-offcan-wrapper .user-chat-list-wrapper {
   background: #126ee8;
   padding: 20px 4px 20px 20px;
   border-radius: 6px;
-  margin-bottom: 20px;
   opacity: 0;
   width: 200px;
-  position: relative;
+  position: absolute;
   left: -220px;
+  bottom: 40px;
   pointer-events: none;
   transition: all 0.3s;
 }
