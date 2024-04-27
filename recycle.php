@@ -25,7 +25,7 @@ include 'note.php';
                                         $filename =  basename($file);
                                     ?>
                                     <div class="col-lg-4 col-md-6">
-                                        <div class="bin-single">
+                                        <div class="recyclebin-single">
                                             <img src="<?php echo $file ?>" alt="<?php echo $filename ?>">
                                             <div><?php echo $filename ?></div>
                                         </div>

@@ -206,7 +206,9 @@ body {
         }
     }
 }
-
+.recyclebin-single {
+    word-wrap: break-word;
+}
 .form-wrapper {
     background: linear-gradient(49deg, #ffffff4f 0%, transparent 50%);
     border-radius: 6px;

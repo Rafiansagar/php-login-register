@@ -201,6 +201,10 @@ body.conversation-list-open .user-chat-list-wrapper {
   display: inline-block;
 }
 
+.recyclebin-single {
+  word-wrap: break-word;
+}
+
 .form-wrapper {
   background: linear-gradient(49deg, rgba(255, 255, 255, 0.3098039216) 0%, transparent 50%);
   border-radius: 6px;
