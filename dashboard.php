@@ -1,6 +1,7 @@
 <?php
 include 'session_check.php';
 include 'db.php';
+include 'note.php';
 
 // Check if the form is submitted for updating the user role or deleting the user
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -133,13 +134,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 </form>
                             </div>
                         </div>
+                        <a href="recycle.php">Recyclebin</a>
                     <?php }
                 }
                 echo '<br><a href="logout.php">Logout</a>';
                 echo '<br><a href="main_content.php">Main Content</a>';
             } else {
-                echo "Access denied. Please log in.";
-                echo '<br><a href="index.php">LogIn</a>';
+                access_denied_note();
             }
             ?>
         </div>

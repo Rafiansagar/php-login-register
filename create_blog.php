@@ -1,6 +1,7 @@
 <?php
 include 'session_check.php';
 include 'db.php';
+include 'note.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];
@@ -79,12 +80,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     </form>
                                 
                             <?php } else {
-                                echo "Sorry Youre Not a Admin.";
-                                echo '<br><a href="main_content.php">Return Home</a>';
+                                not_admin_note();
                             }
                         } else {
-                            echo "Request Invalid";
-                            echo '<br><a href="index.php">LogIn</a>';
+                            invalid_req_note();
                         }
                     ?>
                 </div>
