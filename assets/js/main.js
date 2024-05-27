@@ -28,7 +28,7 @@
                 }
             });
         }
-        setInterval(fetchData, 5000);
+        setInterval(fetchData, 200);
     });
 
 })(jQuery);

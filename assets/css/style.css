@@ -146,7 +146,7 @@ body .chat-offcan-wrapper .user-chat-list-wrapper {
   width: 200px;
   position: absolute;
   left: -220px;
-  bottom: 40px;
+  bottom: 60px;
   pointer-events: none;
   transition: all 0.3s;
 }
