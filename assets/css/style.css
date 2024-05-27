@@ -347,3 +347,25 @@ body.conversation-list-open .user-chat-list-wrapper {
 .conversation-area .timestamp {
   font-size: 12px;
 }
+
+.api-call-area .common {
+  padding: 30px;
+  border-radius: 6px;
+  position: relative;
+}
+.api-call-area .common.api-call-weather .temp {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+  display: block;
+  color: #111111;
+}
+.api-call-area .common.api-call-weather ul li {
+  color: #111111;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px 0;
+  text-transform: capitalize;
+}
+.api-call-area .common.api-call-weather ul li:last-child {
+  border: none;
+}

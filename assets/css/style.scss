@@ -356,3 +356,32 @@ body {
         font-size: 12px;
     }
 }
+
+// Api Block CSS
+.api-call-area {
+    .common {
+        padding: 30px;
+        border-radius: 6px;
+        position: relative;
+        &.api-call-weather {
+            .temp {
+                text-align: center;
+                font-size: 35px;
+                font-weight: 700;
+                display: block;
+                color: $titleColor;
+            }
+            ul {
+                li {
+                    color: $titleColor;
+                    border-bottom: 1px solid rgba(255,255,255,0.2);
+                    padding: 15px 0;
+                    text-transform: capitalize;
+                    &:last-child {
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}
