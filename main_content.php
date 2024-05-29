@@ -84,7 +84,6 @@
                             As (visitor or user)<br>
                             User: user123<br>
                             Pass: user123
-
                         </div>
 
                         <div class="api-call-area" style="padding: 100px 0;">
