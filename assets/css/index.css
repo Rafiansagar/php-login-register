@@ -431,13 +431,14 @@ body.conversation-list-open .user-chat-list-wrapper {
   justify-content: center;
   flex-direction: column;
   height: 100%;
+  padding-bottom: 14px;
 }
 .dashboard-page .dashbord-content .dash_content .tab-content .tab-pane .welcome-note .welcome {
   font-size: 150px;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 14px;
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   line-height: 1;
   color: transparent;
   -webkit-text-stroke: 1px;
@@ -455,6 +456,9 @@ body.conversation-list-open .user-chat-list-wrapper {
 }
 .dashboard-page .dashbord-content .dash_content .tab-content .tab-pane .welcome-note .name span {
   display: inline-block;
+  min-width: 130px;
+  text-align: center;
+  text-transform: capitalize;
 }
 .dashboard-page .dashbord-content .dash_content .tab-content .tab-pane .welcome-note .name i {
   color: #ffffff;
