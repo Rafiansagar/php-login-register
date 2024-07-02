@@ -78,7 +78,7 @@ $username = $_SESSION["username"];
                         <div class="tab-pane fade show active" id="dashboard">
                             <div class="welcome-note">
                                 <h2 class="welcome">Welcome</h2>
-                                <div class="name"><i class="ri-user-line"></i><?php echo $username; ?></div>
+                                <div class="name"><i class="ri-user-line"></i><span><?php echo $username; ?></span></div>
                             </div>
                         </div>
                         <!-- Dashboard Content End -->

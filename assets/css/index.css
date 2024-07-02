@@ -447,10 +447,23 @@ body.conversation-list-open .user-chat-list-wrapper {
   margin: 0;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   font-size: 24px;
+  border-radius: 60px;
+  border: 1px solid #126ee8;
+  padding: 2px 30px 2px 2px;
+}
+.dashboard-page .dashbord-content .dash_content .tab-content .tab-pane .welcome-note .name span {
+  display: inline-block;
 }
 .dashboard-page .dashbord-content .dash_content .tab-content .tab-pane .welcome-note .name i {
-  color: #126ee8;
+  color: #ffffff;
   font-size: 30px;
+  width: 63px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #126ee8;
 }
