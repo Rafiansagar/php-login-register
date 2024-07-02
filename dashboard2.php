@@ -49,14 +49,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
     exit();
 }
-$username = $_SESSION["username"];
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'inc/head.php'; ?>
 <body class="dashboard-page">
-    <?php if ($loggedIn) { ?>
+    <?php if ($loggedIn) {
+        $username = $_SESSION["username"];
+        ?>
         <div class="dashbord-content">
             <div class="row">
                 <div class="dash_sidebar col-md-2">
