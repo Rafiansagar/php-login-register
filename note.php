@@ -12,7 +12,7 @@
         echo '<br><a href="index.php">LogIn</a>';
     }
     function access_denied_note() {
-        echo "Access denied. Please log in.";
+        echo "Access denied. Please login.";
         echo '<br><a href="index.php">LogIn</a>';
     }
 ?>

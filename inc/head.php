@@ -22,7 +22,7 @@
     <!-- Spacing CSS -->
     <link rel="stylesheet" href="assets/css/st-spacing.css">
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="assets/css/responsive.css">
 </head>

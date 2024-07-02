@@ -1,0 +1,92 @@
+// Dshboard Page Design
+.dashboard-page {
+    .dashbord-content {
+        height: 100vh;
+        > div.row {
+            height: 100%;
+        }
+        .dash_sidebar {
+            padding: 0;
+            height: 100%;
+            background: #252525;
+            ul.nav {
+                border: none;
+                li.nav-item {
+                    margin: 0;
+                    button {
+                        border: none;
+                        width: 100%;
+                        background: transparent;
+                        text-align: left;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 0;
+                        padding: 15px 50px;
+                        outline: none !important;
+                        color: $whiteColor;
+                        transition: $transition;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        i {
+                            color: $primaryColor;
+                            font-size: 20px;
+                            transition: $transition;
+                        }
+                        &.active {
+                            background: $primaryColor;
+                            i {
+                                color: $whiteColor;
+                            }
+                        }
+                    }
+                    &:last-child {
+                        button {
+                            &.active {
+                                border-color: $primaryColor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .dash_content {
+            padding: 50px;
+            .tab-content {
+                height: 100%;
+                .tab-pane {
+                    height: 100%;
+                    .welcome-note {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        height: 100%;
+                        .welcome {
+                            font-size: 150px;
+                            text-transform: uppercase;
+                            letter-spacing: 5px;
+                            margin: 0;
+                            margin-bottom: 40px;
+                            line-height: 1;
+                            color: transparent;
+                            -webkit-text-stroke: 1px;
+                            -webkit-text-stroke-color: $primaryColor;
+                        }
+
+                        .name {
+                            margin: 0;
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            font-size: 24px;
+                            i {
+                                color: $primaryColor;
+                                font-size: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -369,3 +369,88 @@ body.conversation-list-open .user-chat-list-wrapper {
 .api-call-area .common.api-call-weather ul li:last-child {
   border: none;
 }
+
+.dashboard-page .dashbord-content {
+  height: 100vh;
+}
+.dashboard-page .dashbord-content > div.row {
+  height: 100%;
+}
+.dashboard-page .dashbord-content .dash_sidebar {
+  padding: 0;
+  height: 100%;
+  background: #252525;
+}
+.dashboard-page .dashbord-content .dash_sidebar ul.nav {
+  border: none;
+}
+.dashboard-page .dashbord-content .dash_sidebar ul.nav li.nav-item {
+  margin: 0;
+}
+.dashboard-page .dashbord-content .dash_sidebar ul.nav li.nav-item button {
+  border: none;
+  width: 100%;
+  background: transparent;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  padding: 15px 50px;
+  outline: none !important;
+  color: #ffffff;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dashboard-page .dashbord-content .dash_sidebar ul.nav li.nav-item button i {
+  color: #126ee8;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+.dashboard-page .dashbord-content .dash_sidebar ul.nav li.nav-item button.active {
+  background: #126ee8;
+}
+.dashboard-page .dashbord-content .dash_sidebar ul.nav li.nav-item button.active i {
+  color: #ffffff;
+}
+.dashboard-page .dashbord-content .dash_sidebar ul.nav li.nav-item:last-child button.active {
+  border-color: #126ee8;
+}
+.dashboard-page .dashbord-content .dash_content {
+  padding: 50px;
+}
+.dashboard-page .dashbord-content .dash_content .tab-content {
+  height: 100%;
+}
+.dashboard-page .dashbord-content .dash_content .tab-content .tab-pane {
+  height: 100%;
+}
+.dashboard-page .dashbord-content .dash_content .tab-content .tab-pane .welcome-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+.dashboard-page .dashbord-content .dash_content .tab-content .tab-pane .welcome-note .welcome {
+  font-size: 150px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin: 0;
+  margin-bottom: 40px;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: #126ee8;
+}
+.dashboard-page .dashbord-content .dash_content .tab-content .tab-pane .welcome-note .name {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+}
+.dashboard-page .dashbord-content .dash_content .tab-content .tab-pane .welcome-note .name i {
+  color: #126ee8;
+  font-size: 30px;
+}
