@@ -426,6 +426,7 @@ body.conversation-list-open .user-chat-list-wrapper {
   justify-content: space-evenly;
   padding-top: 20px;
   padding-bottom: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 .dashboard-page .dashbord-content .dash_sidebar ul.sidebar-bottom li button,
 .dashboard-page .dashbord-content .dash_sidebar ul.sidebar-bottom li a {
@@ -468,6 +469,21 @@ body.conversation-list-open .user-chat-list-wrapper {
 }
 .dashboard-page .dashbord-content .dash_content .tab-content .tab-pane {
   height: 100%;
+}
+.dashboard-page .dashbord-content .dash_content .tab-content .tab-pane .tab-banner {
+  background: url("../images/tab-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px;
+  border-radius: 30px;
+  margin-bottom: 50px;
+  color: #ffffff;
 }
 .dashboard-page .dashbord-content .dash_content .tab-content .tab-pane .welcome-note {
   display: flex;
@@ -514,4 +530,29 @@ body.conversation-list-open .user-chat-list-wrapper {
   justify-content: center;
   border-radius: 50%;
   background: #126ee8;
+}
+.dashboard-page .dashbord-content .dash_content .tab-content .tab-pane .table_component {
+  overflow: auto;
+  width: 100%;
+}
+.dashboard-page .dashbord-content .dash_content .tab-content .tab-pane .table_component table {
+  border: 1px solid #dededf;
+  height: 100%;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 1px;
+  text-align: left;
+}
+.dashboard-page .dashbord-content .dash_content .tab-content .tab-pane .table_component table th {
+  border: 1px solid #dededf;
+  background-color: #eceff1;
+  color: #000000;
+  padding: 15px 25px;
+}
+.dashboard-page .dashbord-content .dash_content .tab-content .tab-pane .table_component table td {
+  border: 1px solid #dededf;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 15px 25px;
 }
