@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $username = $_SESSION["username"];
         ?>
         <div class="dashbord-content">
-            <div class="row">
+            <div class="row m-0 p-0">
                 <div class="dash_sidebar col-md-2">
                     <ul class="nav nav-tabs flex-column" role="tablist">
                         <li class="nav-item" role="presentation">
@@ -70,8 +70,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile">dfgdfg</button>
+                            <button class="nav-link" id="users-tab" data-bs-toggle="tab" data-bs-target="#users"><i class="ri-user-6-line"></i> Users</button>
                         </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="recycle-bin-tab" data-bs-toggle="tab" data-bs-target="#recycle-bin"><i class="ri-delete-bin-line"></i> Recycle Bin</button>
+                        </li>
+                    </ul>
+
+                    <ul class="sidebar-bottom">
+                        <li>
+                            <form action="logout.php" method="post" id="logout-form">
+                                <button type="submit"><i class="ri-logout-box-line"></i>Logout</button>
+                            </form>
+                        </li>
+                        <li><a href="/main_content.php" target="_blank"><i class="ri-computer-line"></i>Visit Site</a></li>
                     </ul>
                 </div>
                 <div class="dash_content col-md-10">
@@ -86,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <!-- Dashboard Content End -->
 
                         <!-- Intro Content Start -->
-                        <div class="tab-pane fade" id="profile">
+                        <div class="tab-pane fade" id="users">
                             <?php if (isset($_SESSION["role"])) {
                                 $role = $_SESSION["role"];
                                 echo "Name: $username<br>";
@@ -101,6 +113,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 }
                             } ?>
                         </div>
+                        <!-- Intro Content End -->
+
+                        <!-- Recycle Bin Content Start -->
+                        <div class="tab-pane fade" id="recycle-bin">
+                            <div class="row">
+                                <?php
+                                    $dir = 'uploads/recyclebin/';
+                                    $files = glob($dir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+                                    foreach ($files as $file) {
+                                        $filename =  basename($file);
+                                    ?>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="recyclebin-single">
+                                            <img src="<?php echo $file ?>" alt="<?php echo $filename ?>">
+                                            <div><?php echo $filename ?></div>
+                                        </div>
+                                    </div>
+                                    <?php }
+                                ?> 
+                            </div>
+                        </div>
+                        <!-- Recycle Bin Content End -->
                     </div>
                 </div>
             </div>

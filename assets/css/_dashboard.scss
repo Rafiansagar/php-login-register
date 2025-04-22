@@ -9,6 +9,9 @@
             padding: 0;
             height: 100%;
             background: #252525;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             ul.nav {
                 border: none;
                 li.nav-item {
@@ -20,7 +23,7 @@
                         text-align: left;
                         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
                         border-radius: 0;
-                        padding: 15px 50px;
+                        padding: 15px 30px;
                         outline: none !important;
                         color: $whiteColor;
                         transition: $transition;
@@ -43,6 +46,49 @@
                         button {
                             &.active {
                                 border-color: $primaryColor;
+                            }
+                        }
+                    }
+                }
+            }
+            ul.sidebar-bottom {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                justify-content: space-evenly;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                li {
+                    button,
+                    a {
+                        color: $whiteColor;
+                        transition: $transition;
+                        text-align: center;
+                        font-size: 12px;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        justify-content: center;
+                        outline: none;
+                        border: none;
+                        background: transparent;
+                        i {
+                            width: 40px;
+                            height: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 50%;
+                            background: $primaryColor;
+                            transition: $transition;
+                            color: $whiteColor;
+                            font-size: 16px;
+                            margin-bottom: 6px;
+                        }
+                        &:hover {
+                            i {
+                                color: $primaryColor;
+                                background: $whiteColor;
                             }
                         }
                     }

@@ -380,6 +380,9 @@ body.conversation-list-open .user-chat-list-wrapper {
   padding: 0;
   height: 100%;
   background: #252525;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .dashboard-page .dashbord-content .dash_sidebar ul.nav {
   border: none;
@@ -394,7 +397,7 @@ body.conversation-list-open .user-chat-list-wrapper {
   text-align: left;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0;
-  padding: 15px 50px;
+  padding: 15px 30px;
   outline: none !important;
   color: #ffffff;
   transition: all 0.3s;
@@ -415,6 +418,47 @@ body.conversation-list-open .user-chat-list-wrapper {
 }
 .dashboard-page .dashbord-content .dash_sidebar ul.nav li.nav-item:last-child button.active {
   border-color: #126ee8;
+}
+.dashboard-page .dashbord-content .dash_sidebar ul.sidebar-bottom {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.dashboard-page .dashbord-content .dash_sidebar ul.sidebar-bottom li button,
+.dashboard-page .dashbord-content .dash_sidebar ul.sidebar-bottom li a {
+  color: #ffffff;
+  transition: all 0.3s;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+.dashboard-page .dashbord-content .dash_sidebar ul.sidebar-bottom li button i,
+.dashboard-page .dashbord-content .dash_sidebar ul.sidebar-bottom li a i {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #126ee8;
+  transition: all 0.3s;
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+.dashboard-page .dashbord-content .dash_sidebar ul.sidebar-bottom li button:hover i,
+.dashboard-page .dashbord-content .dash_sidebar ul.sidebar-bottom li a:hover i {
+  color: #126ee8;
+  background: #ffffff;
 }
 .dashboard-page .dashbord-content .dash_content {
   padding: 50px;
