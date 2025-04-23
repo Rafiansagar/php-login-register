@@ -206,6 +206,27 @@
                     </div>
                 </div>
             </div>
+
+            <div class="text-center">
+                <h2>My PeerJS ID: <span id="my-id">Loading...</span></h2>
+                
+                <h2>
+                    Other End: Id:<span>384a3006-d94b-43ea-bf0a-713f68d6ab1f</span><br>
+                    Target Url: https://check-wp.rf.gd/khdfkhsduhfsdf
+                </h2>
+
+                <input type="text" id="remote-id" placeholder="Enter peer ID to call">
+                <button onclick="startCall()">Call</button>
+
+                <h3>Chat:</h3>
+                <div id="chat-box"></div>
+                <input type="text" id="chat-input" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+
+                <audio id="remote-audio" autoplay></audio>
+            </div>
+
+
         <?php else: ?>
             <div class="container">
                 <h1>Nothing Found</h1>
